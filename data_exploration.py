@@ -1,24 +1,21 @@
 import pandas as pd
 
-# Load the dataset
-file_path = "data/gas_pipeline_dataset.csv"
-df = pd.read_csv(file_path)
+def explore_data(file_path):
+    print(f"Loading dataset from {file_path}...")
+    df = pd.read_csv(file_path)
+    
+    print("\nBasic Information:")
+    print(df.info())
+    
+    print("\nFirst 5 Rows:")
+    print(df.head())
+    
+    print("\nSummary Statistics:")
+    print(df.describe())
+    
+    print("\nMissing Values:")
+    print(df.isnull().sum())
 
-# Display basic information about the dataset
-print("Basic Info:")
-print(df.info())
-print("\n")
+file_path = "data/Event_Export_082217.csv"
+explore_data(file_path)
 
-# Display the first few rows
-print("First 5 Rows:")
-print(df.head())
-print("\n")
-
-# Check for missing values
-print("Missing Values:")
-print(df.isnull().sum())
-print("\n")
-
-# Display basic statistics
-print("Basic Statistics:")
-print(df.describe())
